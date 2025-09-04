@@ -1,50 +1,27 @@
-# Thesis: Nghiên cứu các kỹ thuật kết hợp nhiều dữ liệu hình ảnh
+# Research on Multi-Modal Visual Data Fusion Techniques
 
-## Tổng quan
-Dự án này nghiên cứu các phương pháp kết hợp ảnh 2D RGB và dữ liệu đám mây điểm 3D (từ LiDAR) để tính được khoảng cách từ camera đến các đối tượng và nâng cao hiệu quả nhận dạng đối tượng. Chúng tôi sử dụng YOLOv8 của Ultralytics và Open3D để triển khai và so sánh các chiến lược kết hợp khác nhau, đồng thời cung cấp một bản demo trên Streamlit để trực quan hóa kết quả.
+## 📌 Overview
+This project investigates techniques for fusing **2D RGB images** with **3D LiDAR point cloud data** to:
+- Estimate distances from the camera to objects.
+- Improve object detection performance.
 
-## Dữ liệu gốc (raw_data)
+We utilize **YOLOv8 (Ultralytics)** and **Open3D** to implement and compare different fusion strategies, and provide an **interactive demo using Streamlit**.
 
-Do dung lượng rất lớn, bộ dữ liệu gốc không được lưu trong repo. Bạn cần tải thủ công từ KITTI Object Detection benchmark:
+---
 
-> https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d
+## 📂 Dataset
+The original KITTI dataset is **not included** in the repository due to its large size. Please download manually from [KITTI Object Detection benchmark](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d):
 
-Cần tải 4 gói:
+- **Left color images of object data set** (12 GB) → `image_2/` (RGB images)  
+- **Velodyne point clouds** (29 GB) → `data_object_velodyne/`  
+- **Camera calibration matrices** (16 MB) → `data_object_calib/`  
+- **Training labels** (5 MB) → `data_object_label_2/`  
 
-- **Left color images of object data set** (12 GB)  
-  → Ảnh RGB (thư mục `image_2/`)  
-- **Velodyne point clouds** (29 GB)  
-  → Dữ liệu point-cloud (thư mục `data_object_velodyne/`)  
-- **Camera calibration matrices of object data set** (16 MB)  
-  → Ma trận hiệu chỉnh camera (thư mục `data_object_calib/`)  
-- **Training labels of object data set** (5 MB)  
-  → Nhãn training (thư mục `data_object_label_2/`)
+---
 
+## ⚙️ Installation
 
-## Cài đặt
-
-1. **Clone repo**  
-   ```bash
-   git clone https://github.com/Hate0205/Research-on-techniques-that-combine-multiple-visual-data.git
-   cd Research-on-techniques-that-combine-multiple-visual-data
-
-2. **Tạo và kích hoạt môi trường ảo**
-  ### Python ≥3.8
-  ```bash
-  python -m venv venv
-  ```
-  ### Windows
-  ```bash
-  venv\Scripts\activate
-  ```
-  #### macOS/Linux
-  ```bash
-  source venv/bin/activate
-  ```
-  
-  3. Cài đặt phụ thuộc
-  ```bash
-  pip install --upgrade pip
-  pip install -r requirements.txt
-  ```
-
+### 1. Clone the repository
+```bash
+git clone https://github.com/Hate0205/Research-on-techniques-that-combine-multiple-visual-data.git
+cd Research-on-techniques-that-combine-multiple-visual-data
