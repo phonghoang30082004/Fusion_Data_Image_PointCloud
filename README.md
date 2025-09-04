@@ -8,7 +8,8 @@ This project investigates techniques for fusing **2D RGB images** with **3D LiDA
 We utilize **YOLOv8 (Ultralytics)** and **Open3D** to implement and compare different fusion strategies, and provide an **interactive demo using Streamlit**.
 
 ---
-
+**🎓 Thesis Evaluation:** 9.7 / 10
+---
 ## 📂 Dataset
 The original KITTI dataset is **not included** in the repository due to its large size. Please download manually from [KITTI Object Detection benchmark](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d):
 
